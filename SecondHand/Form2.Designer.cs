@@ -2,7 +2,7 @@
 {
     partial class Form2
     {
-        private System.ComponentModel.IContainer components = null; //231
+        private System.ComponentModel.IContainer components = null; // 121323
 
         protected override void Dispose(bool disposing)
         {
