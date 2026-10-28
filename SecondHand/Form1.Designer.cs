@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            файлToolStripMenuItem = new ToolStripMenuItem();
             вихідToolStripMenuItem = new ToolStripMenuItem();
             таблиціToolStripMenuItem = new ToolStripMenuItem();
             поставщикиToolStripMenuItem = new ToolStripMenuItem();
             партіїToolStripMenuItem = new ToolStripMenuItem();
             товариToolStripMenuItem = new ToolStripMenuItem();
+            партіїПостачальниківToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
             dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
@@ -44,25 +44,19 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, вихідToolStripMenuItem, таблиціToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { вихідToolStripMenuItem, таблиціToolStripMenuItem, партіїПостачальниківToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
-            // 
-            файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            файлToolStripMenuItem.Size = new Size(59, 24);
-            файлToolStripMenuItem.Text = "Файл";
-            // 
             // вихідToolStripMenuItem
             // 
             вихідToolStripMenuItem.Name = "вихідToolStripMenuItem";
             вихідToolStripMenuItem.Size = new Size(60, 24);
             вихідToolStripMenuItem.Text = "Вихід";
-            вихідToolStripMenuItem.Click += вихідToolStripMenuItem_Click;
+            вихідToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // таблиціToolStripMenuItem
             // 
@@ -93,14 +87,22 @@
             товариToolStripMenuItem.Text = "Товари";
             товариToolStripMenuItem.Click += товариToolStripMenuItem_Click;
             // 
+            // партіїПостачальниківToolStripMenuItem
+            // 
+            партіїПостачальниківToolStripMenuItem.Name = "партіїПостачальниківToolStripMenuItem";
+            партіїПостачальниківToolStripMenuItem.Size = new Size(175, 24);
+            партіїПостачальниківToolStripMenuItem.Text = "партії постачальників";
+            партіїПостачальниківToolStripMenuItem.Click += партіїПостачальниківToolStripMenuItem_Click;
+            // 
             // button1
             // 
-            button1.Location = new Point(630, 73);
+            button1.Location = new Point(630, 377);
             button1.Name = "button1";
             button1.Size = new Size(170, 41);
             button1.TabIndex = 1;
             button1.Text = "Зберегти зміни";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 
@@ -108,7 +110,7 @@
             dataGridView1.Location = new Point(12, 31);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(496, 244);
+            dataGridView1.Size = new Size(776, 340);
             dataGridView1.TabIndex = 2;
             // 
             // Form1
@@ -131,7 +133,6 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem файлToolStripMenuItem;
         private ToolStripMenuItem вихідToolStripMenuItem;
         private ToolStripMenuItem таблиціToolStripMenuItem;
         private ToolStripMenuItem поставщикиToolStripMenuItem;
@@ -139,5 +140,6 @@
         private ToolStripMenuItem товариToolStripMenuItem;
         private Button button1;
         private DataGridView dataGridView1;
+        private ToolStripMenuItem партіїПостачальниківToolStripMenuItem;
     }
 }

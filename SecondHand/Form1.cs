@@ -5,21 +5,32 @@ namespace SecondHand
     public partial class Form1 : Form
     {
         private string conString = "Host=localhost;Port=5432;Database=secondhand;Username=postgres;Password=4sdr3423#22";
+        private NpgsqlDataAdapter adapter;
+        private DataTable table;
+        private BindingSource bs = new BindingSource();
+        private BindingNavigator navigator;
+
         public Form1()
         {
             InitializeComponent();
+
+            navigator = new BindingNavigator(true);
+            navigator.Dock = DockStyle.Bottom;
+            Controls.Add(navigator);
+            navigator.BindingSource = bs;
         }
         private void LoadData(string TableName)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(conString))
             {
-                connection.Open();
+                adapter = new NpgsqlDataAdapter($"SELECT * FROM \"{TableName}\"", conString);
+                new NpgsqlCommandBuilder(adapter);
 
-                string quary = $"SELECT * FROM \"{TableName}\"";
-                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(quary, connection);
-                DataTable table = new DataTable();
+                table = new DataTable();
                 adapter.Fill(table);
-                dataGridView1.DataSource = table;
+
+                bs.DataSource = table;
+                dataGridView1.DataSource = bs;
             }
         }
 
@@ -53,9 +64,29 @@ namespace SecondHand
 
         }
 
-        private void вихідToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit(); // зачинити програму
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bs.EndEdit();
+                adapter.Update(table);
+                MessageBox.Show("Зміни збережено");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void партіїПостачальниківToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f2 = new Form2();
+            f2.ShowDialog();
         }
     }
 }
