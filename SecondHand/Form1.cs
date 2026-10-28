@@ -55,7 +55,7 @@ namespace SecondHand
 
         private void вихідToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit(); // зачинити програму
         }
     }
 }
