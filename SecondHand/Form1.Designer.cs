@@ -37,6 +37,10 @@
             партіїПостачальниківToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            button2 = new Button();
+            textBox1 = new TextBox();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            queryEditToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -44,7 +48,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { вихідToolStripMenuItem, таблиціToolStripMenuItem, партіїПостачальниківToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { вихідToolStripMenuItem, таблиціToolStripMenuItem, партіїПостачальниківToolStripMenuItem, viewToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -113,11 +117,44 @@
             dataGridView1.Size = new Size(776, 340);
             dataGridView1.TabIndex = 2;
             // 
+            // button2
+            // 
+            button2.Location = new Point(186, 377);
+            button2.Name = "button2";
+            button2.Size = new Size(126, 41);
+            button2.TabIndex = 3;
+            button2.Text = "Вперед";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(36, 384);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 4;
+            // 
+            // viewToolStripMenuItem
+            // 
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { queryEditToolStripMenuItem });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new Size(55, 24);
+            viewToolStripMenuItem.Text = "View";
+            // 
+            // queryEditToolStripMenuItem
+            // 
+            queryEditToolStripMenuItem.Name = "queryEditToolStripMenuItem";
+            queryEditToolStripMenuItem.Size = new Size(224, 26);
+            queryEditToolStripMenuItem.Text = "QueryEdit";
+            queryEditToolStripMenuItem.Click += queryEditToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox1);
+            Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(menuStrip1);
@@ -141,5 +178,9 @@
         private Button button1;
         private DataGridView dataGridView1;
         private ToolStripMenuItem партіїПостачальниківToolStripMenuItem;
+        private Button button2;
+        private TextBox textBox1;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem queryEditToolStripMenuItem;
     }
 }

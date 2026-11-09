@@ -1,6 +1,6 @@
 using Npgsql;
 using System.Data;
-namespace SecondHand    
+namespace SecondHand
 {
     public partial class Form1 : Form
     {
@@ -87,6 +87,29 @@ namespace SecondHand
         {
             var f2 = new Form2();
             f2.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e) // button "Вперед" КЛІК ПЕРЕХІД НА N РЯДКІВ
+        {
+            int step = int.Parse(textBox1.Text);
+            int currentIndex = bs.Position;
+            int newIndex = currentIndex + step;
+            if (newIndex >= bs.Count)
+            {
+                newIndex = bs.Count - 1;
+            }
+            else if (newIndex < 0)
+            {
+                newIndex = 0;
+            }
+
+            bs.Position = newIndex;
+        }
+
+        private void queryEditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var qe = new QueryEdit();
+            qe.Show();
         }
     }
 }

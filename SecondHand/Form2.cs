@@ -16,12 +16,18 @@ namespace SecondHand
         private DataGridView dgvSupplier = new DataGridView();
         private DataGridView dgvBatch = new DataGridView();
         private Button btnSave = new Button();
+        private BindingNavigator navigator;
 
         public Form2()
         {
             InitializeComponent();
             BuildUi();
             Load += Form2_Load;
+
+            navigator = new BindingNavigator(true);
+            navigator.Dock = DockStyle.Bottom;
+            Controls.Add(navigator);
+            navigator.BindingSource = bsMaster;
         }
 
         private void BuildUi()
