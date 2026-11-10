@@ -11,7 +11,6 @@ namespace SecondHand
 {
     public partial class QueryEdit : Form
     {
-        private DataTable dt = new DataTable();
         private BindingNavigator navigator = new BindingNavigator();
         private string conString = "Host=localhost;Port=5432;Database=secondhand;Username=postgres;Password=4sdr3423#22";
         public QueryEdit()
@@ -30,6 +29,7 @@ namespace SecondHand
             try
             {
                 sqlconn.Open();
+                DataTable dt = new DataTable();
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(TestInput.Text, sqlconn);
                 adapter.Fill(dt);
                 dataGridViewQueryEdit.DataSource = dt;
