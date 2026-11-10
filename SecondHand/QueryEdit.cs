@@ -11,7 +11,7 @@ namespace SecondHand
 {
     public partial class QueryEdit : Form
     {
-        private BindingNavigator navigator = new BindingNavigator();
+        private BindingNavigator navigator = new BindingNavigator(); // додати навігатора
         private string conString = "Host=localhost;Port=5432;Database=secondhand;Username=postgres;Password=4sdr3423#22";
         public QueryEdit()
         {
@@ -53,9 +53,10 @@ namespace SecondHand
             this.Close();
         }
 
-        private void cancelButtonQueryEdit_Click(object sender, EventArgs e)
+        private void cancelButtonQueryEdit_Click(object sender, EventArgs e) // Сancel Button
         {
             TestInput.Text = "SELECT";
         }
+
     }
 }
