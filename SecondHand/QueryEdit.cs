@@ -50,7 +50,7 @@ namespace SecondHand
 
         private void exitButtonQueryEdit_Click(object sender, EventArgs e) // Exit Button
         {
-
+            this.Close();
         }
 
         private void cancelButtonQueryEdit_Click(object sender, EventArgs e)
