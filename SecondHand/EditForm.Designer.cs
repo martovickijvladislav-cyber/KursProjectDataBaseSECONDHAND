@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_OK = new Button();
+            button_OK = new Button();
             button_Cancel = new Button();
             textBox_phone_number = new TextBox();
             textBox_supplier_email = new TextBox();
@@ -43,12 +43,13 @@
             // 
             // button_OK
             // 
-            this.button_OK.Location = new Point(213, 267);
-            this.button_OK.Name = "button_OK";
-            this.button_OK.Size = new Size(94, 29);
-            this.button_OK.TabIndex = 0;
-            this.button_OK.Text = "OK";
-            this.button_OK.UseVisualStyleBackColor = true;
+            button_OK.Location = new Point(213, 267);
+            button_OK.Name = "button_OK";
+            button_OK.Size = new Size(94, 29);
+            button_OK.TabIndex = 0;
+            button_OK.Text = "OK";
+            button_OK.UseVisualStyleBackColor = true;
+            button_OK.Click += button_OK_Click;
             // 
             // button_Cancel
             // 
@@ -150,7 +151,7 @@
             Controls.Add(textBox_supplier_email);
             Controls.Add(textBox_phone_number);
             Controls.Add(button_Cancel);
-            Controls.Add(this.button_OK);
+            Controls.Add(button_OK);
             Name = "EditForm";
             Text = "EditForm";
             Load += EditForm_Load;
